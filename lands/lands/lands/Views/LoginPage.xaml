@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="lands.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout 
+            BindingContext="{Binding Login}"
+            Padding="10,20,10,5"
+            BackgroundColor="LightGray">
+            <Label 
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                Text="LOGIN"/>
+            <Label
+                TextColor="Black"
+                Text="Email">
+            </Label>
+            <Entry
+                Keyboard="Email"
+                Text="{Binding Email, Mode=TwoWay}"
+                Placeholder="Enter your email...">
+            </Entry>
+            <Label
+                TextColor="Black"
+                Text="Password">
+            </Label>
+            <Entry
+                IsPassword="true"
+                Text="{Binding Password, Mode=TwoWay}"
+                Placeholder="Enter your password...">
+            </Entry>
+            <ActivityIndicator
+                IsRunning="{Binding IsRunnin, Mode=TwoWay}">
+            </ActivityIndicator>
+            <Button
+                BackgroundColor="Navy"
+                BorderRadius="23"
+                Command="{Binding LoginCommand}"
+                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                Text="Login"
+                TextColor="White">
+            </Button>
+            <Button
+                BackgroundColor="purple"
+                BorderRadius="23"
+                Text="Register"
+                TextColor="Wheat">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
